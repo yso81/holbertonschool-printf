@@ -1,9 +1,7 @@
 #include "main.h"
-
 /**
  * _printf - a function that produces output according to a format
  * @format: a character string composed of zero or more directives
- *
  * Return: the number of characters printed
  */
 int _printf(const char *format, ...)
@@ -14,9 +12,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(args, format);
-
 	while (format && format[i])
 	{
 		if (format[i] == '%')
@@ -24,7 +20,6 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 				return (-1);
-
 			switch (format[i])
 			{
 				case 'c':
@@ -48,7 +43,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-
 	va_end(args);
 	return (count);
 }
