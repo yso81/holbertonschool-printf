@@ -31,6 +31,10 @@ int _printf(const char *format, ...)
 				case '%':
 					count += _putchar('%');
 					break;
+				case 'd':
+				case 'i':
+					count += print_integer(args);
+					break;
 				default:
 					count += _putchar('%');
 					count += _putchar(format[i]);
